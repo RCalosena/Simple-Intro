@@ -167,7 +167,7 @@ public class CutsceneClientHandler {
 
 
     @SubscribeEvent
-    public static void onRenderGameOverlay(RenderGameOverlayEvent event) {
+    public static void onRenderGameOverlay(RenderGameOverlayEvent.Pre event) {
         if (!isInCutscene() && !fading) { return; }
 
         //cancel all UI elements except VIGNETTE
