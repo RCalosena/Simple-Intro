@@ -11,5 +11,6 @@ public class PacketHandler {
 
     public static void init() {
         INSTANCE.registerMessage(PacketCutsceneState.Handler.class, PacketCutsceneState.class, packetId++, Side.CLIENT);
+        INSTANCE.registerMessage(PacketSeenCutsceneState.Handler.class, PacketSeenCutsceneState.class, packetId++, Side.CLIENT);
     }
 }

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "simpleintro.mixin",
+  "refmap": "mixins.simpleintro.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "GuiToast_SkipRenderMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

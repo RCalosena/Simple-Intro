@@ -5,4 +5,11 @@ pluginManagement {
         maven { url = 'https://repo.spongepowered.org/maven' }
         maven { url 'https://maven.gofancy.wtf/releases' }
     }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.toString() == 'org.spongepowered.mixin') {
+                useModule("org.spongepowered:mixingradle:${requested.version}")
+            }
+        }
+    }
 }

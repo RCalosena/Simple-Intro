@@ -15,7 +15,9 @@ import net.minecraft.init.MobEffects;
 import com.fuzs.aquaacrobatics.entity.player.IPlayerResizeable;
 import simpleintro.SimpleIntro;
 import simpleintro.network.PacketCutsceneState;
+import simpleintro.network.PacketSeenCutsceneState;
 import simpleintro.network.PacketHandler;
+import static simpleintro.handlers.ForgeConfigHandler.common;
 
 @Mod.EventBusSubscriber(modid = SimpleIntro.MODID)
 public class CutsceneHandler {
@@ -30,16 +32,19 @@ public class CutsceneHandler {
         NBTTagCompound nbt = player.getEntityData();
 
         //if player hasn't seen cutscene yet, mark them as in cutscene
-        if (!nbt.getBoolean("SeenCutscene")) {
+        if (!nbt.getBoolean("SeenCutscene") || common.cutsceneType != common.cutsceneType.NEVER) {
             nbt.setBoolean("InCutscene", true);
             nbt.setBoolean("InitCrawl", false);
 
             //sync to client
             if (player instanceof EntityPlayerMP) {
-                PacketHandler.INSTANCE.sendTo(
-                        new PacketCutsceneState(true),
-                        (EntityPlayerMP) player
-                );
+                PacketHandler.INSTANCE.sendTo( new PacketCutsceneState(true), (EntityPlayerMP) player);
+            }
+        }
+
+        if (nbt.getBoolean("SeenCutscene")) {
+            if (player instanceof EntityPlayerMP) {
+                PacketHandler.INSTANCE.sendTo( new PacketSeenCutsceneState(true), (EntityPlayerMP) player);
             }
         }
     }
@@ -81,10 +86,8 @@ public class CutsceneHandler {
 
             //sync to client
             if (player instanceof EntityPlayerMP) {
-                PacketHandler.INSTANCE.sendTo(
-                        new PacketCutsceneState(false),
-                        (EntityPlayerMP) player
-                );
+                PacketHandler.INSTANCE.sendTo( new PacketCutsceneState(false), (EntityPlayerMP) player);
+                PacketHandler.INSTANCE.sendTo( new PacketSeenCutsceneState(true), (EntityPlayerMP) player);
             }
         }
     }
