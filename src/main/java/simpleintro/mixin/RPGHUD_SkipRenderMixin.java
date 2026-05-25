@@ -3,23 +3,24 @@ package simpleintro.mixin;
 import simpleintro.handlers.CutsceneClientHandler; 
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraft.client.gui.toasts.GuiToast; 
-import net.minecraft.client.gui.ScaledResolution; 
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.spellcraftgaming.rpghud.main.RenderOverlay;
 import org.spongepowered.asm.mixin.Mixin; 
 import org.spongepowered.asm.mixin.injection.At; 
 import org.spongepowered.asm.mixin.injection.Inject; 
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo; 
 
 @SideOnly(Side.CLIENT)
-@Mixin(GuiToast.class) 
-public abstract class GuiToast_SkipRenderMixin { 
+@Mixin(RenderOverlay.class) 
+public abstract class RPGHUD_SkipRenderMixin { 
     @Inject( 
-        method = "drawToast", 
+        method = "onGameOverlayRender", 
         at = @At(value = "HEAD"), 
-        cancellable = true 
+        cancellable = true,
+        remap = false 
     ) 
     
-    private void simpleintro_skip_toast_render(ScaledResolution resolution, CallbackInfo ci) { 
+    private void simpleintro_skip_rpghud_render(RenderGameOverlayEvent event, CallbackInfo ci) { 
         if (CutsceneClientHandler.isInCutscene()) { 
             ci.cancel(); 
         } 

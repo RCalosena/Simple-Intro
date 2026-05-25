@@ -42,7 +42,7 @@ public class ForgeConfigHandler {
 			public int reduced_fade_duration = 50;
 
 			@Config.Name("Reduced Text Draw Delay")
-			@Config.Comment("How many ticks before the text appears")
+			@Config.Comment("How many ticks before the text that tells you to stand up appears")
 			@Config.RangeInt(min = 1)
 			public int reduced_text_draw_delay = 100;
 			
@@ -59,7 +59,7 @@ public class ForgeConfigHandler {
     	public int fade_duration = 100;
 
 		@Config.Name("Text Draw Delay")
-		@Config.Comment("How many ticks before the text appears")
+		@Config.Comment("How many ticks before the text that tells you to stand up appears")
 		@Config.RangeInt(min = 1)
     	public int text_draw_delay = 200;
 

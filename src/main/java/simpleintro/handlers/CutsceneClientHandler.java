@@ -14,7 +14,6 @@ import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.toasts.GuiToast;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
@@ -22,12 +21,14 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.nbt.NBTTagCompound;
+
 import com.fuzs.aquaacrobatics.util.Keybindings;
 import com.fuzs.aquaacrobatics.network.NetworkHandler;
 import com.fuzs.aquaacrobatics.network.message.PacketSendKey;
-import java.util.ArrayList;
-import simpleintro.SimpleIntro;
 import mcp.mobius.waila.overlay.WailaTickHandler;
+
+import simpleintro.SimpleIntro;
+
 import static simpleintro.handlers.ForgeConfigHandler.common;
 import static simpleintro.handlers.ForgeConfigHandler.client;
 

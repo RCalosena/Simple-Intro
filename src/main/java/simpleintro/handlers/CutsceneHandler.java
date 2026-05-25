@@ -12,11 +12,14 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.init.MobEffects;
+
 import com.fuzs.aquaacrobatics.entity.player.IPlayerResizeable;
+
 import simpleintro.SimpleIntro;
 import simpleintro.network.PacketCutsceneState;
 import simpleintro.network.PacketSeenCutsceneState;
 import simpleintro.network.PacketHandler;
+
 import static simpleintro.handlers.ForgeConfigHandler.common;
 
 @Mod.EventBusSubscriber(modid = SimpleIntro.MODID)

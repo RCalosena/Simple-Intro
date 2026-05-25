@@ -59,6 +59,7 @@ dependencies {
     implementation fg.deobf("curse.maven:fermiumbooter-${fermiumbooter_version}")
     implementation fg.deobf("curse.maven:aquaacrobatics-${aquaacrobatics_version}")
     implementation fg.deobf("curse.maven:hwyla-${hwyla_version}")
+    implementation fg.deobf("curse.maven:rpghud-${rpghud_version}")
 }
 
 mixin {

@@ -12,6 +12,7 @@ public class SimpleIntroPlugin implements IFMLLoadingPlugin {
 		MixinBootstrap.init();
 		//False for Vanilla/Coremod mixins, true for regular mod mixins
 		FermiumRegistryAPI.enqueueMixin(false, "mixins.simpleintro.guitoast.json");
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.simpleintro.rpghud.json");
 		//--> Replaced by @MixinConfig.MixinToggle in ForgeConfigHandler. This way is still an option for more complicated conditions
 	}
 
