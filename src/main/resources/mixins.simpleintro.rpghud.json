@@ -6,6 +6,8 @@
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "mixins": [
+  ],
+  "client": [
     "RPGHUD_SkipRenderMixin"
   ],
   "injectors": {

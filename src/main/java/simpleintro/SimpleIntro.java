@@ -13,7 +13,7 @@ import simpleintro.network.PacketHandler;
 @Mod(modid = SimpleIntro.MODID, version = SimpleIntro.VERSION, name = SimpleIntro.NAME, dependencies = "required-after:aquaacrobatics;required-after:fermiumbooter")
 public class SimpleIntro {
     public static final String MODID = "simpleintro";
-    public static final String VERSION = "2.0.0";
+    public static final String VERSION = "2.0.1";
     public static final String NAME = "SimpleIntro";
     public static final Logger LOGGER = LogManager.getLogger();
     public static boolean completedLoading = false;

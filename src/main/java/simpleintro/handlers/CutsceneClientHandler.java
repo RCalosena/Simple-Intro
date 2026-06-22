@@ -32,8 +32,8 @@ import simpleintro.SimpleIntro;
 import static simpleintro.handlers.ForgeConfigHandler.common;
 import static simpleintro.handlers.ForgeConfigHandler.client;
 
-@Mod.EventBusSubscriber(modid = SimpleIntro.MODID, value = Side.CLIENT)
 @SideOnly(Side.CLIENT)
+@Mod.EventBusSubscriber(modid = SimpleIntro.MODID, value = Side.CLIENT)
 public class CutsceneClientHandler {
     
     private static int fadeTicks = 0;
